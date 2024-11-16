@@ -5,34 +5,49 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pelanggaran</div>
+                <div class="card-header">Siswa</div>
 
                 <div class="card-body">
                     <form action="{{route('siswa.store')}}" method="post">
-                        @csrf 
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label >
+                                    <label>
                                         Nama Siswa
                                     </label>
-                                    <input type="text" name="jenis_pelanggaran"  class="form-control">
+                                    <input type="text" name="nama_siswa" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label >
+                                    <label>
+                                        Jenis Pelanggaran
+                                    </label>
+                                    <select name="id_pelanggaran" class="form-control">
+                                        @foreach($pelanggaran as $row)
+                                        <option value="{{$row->id}}">{{$row->jenis_pelanggaran}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>
                                         tanggal
                                     </label>
-                                    <input type="text" name="hukuman"  class="form-control">
+                                    <input type="date" name="tanggal" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label >
+                                    <label>
                                         Deskripsi
                                     </label>
-                                    <input type="text" name="hukuman"  class="form-control">
+                                    <textarea name="deskripsi" class="form-control">
+
+                                    </textarea>
                                 </div>
                             </div>
 
@@ -50,19 +65,22 @@
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
-                                <th>Pelanggaran</th>
-                                <th>Hukuman</th>
+                                <th>Nama Pelaku</th>
+                                <th>Tanggal</th>
+                                <th>Deskripsi</th>
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
                                 @foreach ($data as $item)
                                 <tr>
-                                    <td>{{$item->jenis_pelanggaran}}</td>
-                                    <td>{{$item->hukuman}}</td>
+                                    <td>{{$item->nama_siswa}}</td>
+                                    <td>{{$item->tanggal}}</td>
+                                    <td>{{$item->deskripsi}}</td>
                                     <td>
-                                        <form action="{{route('pelanggaran.destroy',$item->id)}}" method="post">
+                                        <form action="{{route('siswa.destroy',$item->id)}}" method="post">
                                             @csrf
                                             {{method_field('delete')}}
+                                            <a href="#" class="btn btn-info">Detail</a>
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                     </td>

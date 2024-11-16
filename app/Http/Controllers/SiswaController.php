@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggaran;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        //
+        $data = Siswa::all();
+        $pelanggaran = Pelanggaran::all();
+        return view('siswa.index',compact('data', 'pelanggaran'));
     }
 
     /**
@@ -28,7 +31,9 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Siswa::create($input);
+        return back();
     }
 
     /**
@@ -58,8 +63,10 @@ class SiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Siswa $siswa)
+    public function destroy($id)
     {
-        //
+        $data = Siswa::find($id);
+        $data->delete();
+        return back();
     }
 }
