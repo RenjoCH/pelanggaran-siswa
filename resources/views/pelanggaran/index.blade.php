@@ -14,7 +14,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label >
-                                        Nama Pelanggaran
+                                        Jenis Pelanggaran Pelanggaran
                                     </label>
                                     <input type="text" name="jenis_pelanggaran"  class="form-control">
                                 </div>
@@ -29,7 +29,7 @@
                             </div>
                             <div class="col-md-12 mt-2">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-danger">Tambah</button>
+                                    <button type="submit" class="btn btn-success">Tambah</button>
                                 </div>
                             </div>
                         </div>

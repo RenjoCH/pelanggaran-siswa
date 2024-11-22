@@ -53,7 +53,7 @@
 
                             <div class="col-md-12 mt-2">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-danger">Tambah</button>
+                                    <button type="submit" class="btn btn-success">Tambah</button>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                         <form action="{{route('siswa.destroy',$item->id)}}" method="post">
                                             @csrf
                                             {{method_field('delete')}}
-                                            <a href="#" class="btn btn-info">Detail</a>
+                                            <a href="{{route('siswa.show', $item->id)}}" class="btn btn-info">Detail</a>
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                     </td>

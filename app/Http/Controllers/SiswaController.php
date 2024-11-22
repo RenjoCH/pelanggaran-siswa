@@ -39,9 +39,10 @@ class SiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Siswa $siswa)
+    public function show($id)
     {
-        //
+        $data = Siswa::find($id);
+        return view('siswa.detail', compact('data'));
     }
 
     /**

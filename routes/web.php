@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SiswaController;
+
 
 
 
@@ -20,3 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('pelanggaran', PelanggaranController::class);
 Route::resource('siswa', SiswaController::class);
+

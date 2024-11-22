@@ -11,7 +11,7 @@ class Siswa extends Model
 
     public function pelanggaran()
     {
-        $this->belongsTo(Pelanggaran::class, 'id_pelanggaran');
+       return $this->belongsTo(Pelanggaran::class, 'id_pelanggaran');
     }
 
 }
