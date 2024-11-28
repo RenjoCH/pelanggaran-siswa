@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('template.template')
+
+@section('page-title')
+Halaman Detail Siswa
+@endsection
 
 @section('content')
 <div class="container">
@@ -30,7 +34,7 @@
                             </tr>
                         </table>
 
-                        <a href="{{route('siswa.index')}}" class="btn btn-warning">Kembali</a>
+                        <a href="{{route('siswa.index')}}" class="btn btn-warning" style="margin: 10px;">Kembali</a>
                     </div>
                 </div>
             </div>
