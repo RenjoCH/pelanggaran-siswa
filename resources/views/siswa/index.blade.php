@@ -1,9 +1,13 @@
-@extends('layouts.app')
+@extends('template.template')
+
+@section('page-title')
+Halaman Detail Siswa
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Siswa</div>
 
@@ -65,7 +69,7 @@
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
-                                <th>Nama Pelaku</th>
+                                <th>Nama</th>
                                 <th>Tanggal</th>
                                 <th>Deskripsi</th>
                                 <th>Pilihan</th>

@@ -1,9 +1,14 @@
-@extends('layouts.app')
+@extends('template.template')
+
+
+@section('page-title')
+Halaman Pelanggaran
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Pelanggaran</div>
 
@@ -14,7 +19,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label >
-                                        Jenis Pelanggaran Pelanggaran
+                                        Jenis Pelanggaran 
                                     </label>
                                     <input type="text" name="jenis_pelanggaran"  class="form-control">
                                 </div>
