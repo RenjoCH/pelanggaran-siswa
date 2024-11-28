@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('pelanggaran', PelanggaranController::class);
 Route::resource('siswa', SiswaController::class);
 
+Route::view('tampilan','template.template');
+
