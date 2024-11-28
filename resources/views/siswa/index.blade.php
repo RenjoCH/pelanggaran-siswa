@@ -70,6 +70,7 @@
                                 <th>Deskripsi</th>
                                 <th>Pilihan</th>
                             </thead>
+                            
                             <tbody>
                                 @foreach ($data as $item)
                                 <tr>
