@@ -8,15 +8,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('pelanggaran.index')}}">
                     <span>Pelanggaran</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('siswa.index')}}">
                     <span>Data Siswa</span>
                 </a>
             </li>
         </ul>
-    </div><!-- container -->
+    </div>
 </div>

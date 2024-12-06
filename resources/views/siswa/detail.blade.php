@@ -14,7 +14,7 @@ Halaman Detail Siswa
                         <table class="table table-striped">
                             <tr>
                                 <th>Nama Siswa</th>
-                                <td>{{$data->nama_siswa}}</td>
+                                <td>{{$data->user->name}}</td>
                             </tr>
                             <tr>
                                 <th>Jenis Pelanggaran</th>

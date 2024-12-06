@@ -37,6 +37,10 @@
     <!-- vendor css -->
     <link href="{{asset('assets/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('assets/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/datatables/css/jquery.dataTables.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/select2/css/select2.min.css')}}" rel="stylesheet">
+
+
 
     <!-- Slim CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/slim.css')}}">
@@ -214,6 +218,28 @@
     <script src="{{asset('assets/lib/popper.js/js/popper.js')}}"></script>
     <script src="{{asset('assets/lib/bootstrap/js/bootstrap.js')}}"></script>
 
+    <script src="{{asset('assets/lib/jquery.cookie/js/jquery.cookie.js')}}"></script>
+    <script src="{{asset('assets/lib/datatables/js/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('assets/lib/datatables-responsive/js/dataTables.responsive.js')}}"></script>
+    <script src="{{asset('assets/lib/select2/js/select2.min.js')}}"></script>
+
+
     <script src="{{asset('assets/js/slim.js')}}"></script>
+
+
+    <script>
+      $(function(){
+        'use strict';
+
+        $('#datatable1').DataTable({
+          responsive: true,
+          language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+          }
+        });
+      });
+    </script>
   </body>
 </html>

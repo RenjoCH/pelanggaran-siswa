@@ -20,7 +20,14 @@ Halaman Detail Siswa
                                     <label>
                                         Nama Siswa
                                     </label>
-                                    <input type="text" name="nama_siswa" class="form-control">
+                                    <select name="id_user" class="form-control" required>
+                                        <option value="">-data siswa-</option>
+                                        @foreach($user as $item)
+                                        @if(!$item->admin)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -64,39 +71,44 @@ Halaman Detail Siswa
                     </form>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>Deskripsi</th>
-                                <th>Pilihan</th>
-                            </thead>
-                            
-                            <tbody>
-                                @foreach ($data as $item)
-                                <tr>
-                                    <td>{{$item->nama_siswa}}</td>
-                                    <td>{{$item->tanggal}}</td>
-                                    <td>{{$item->deskripsi}}</td>
-                                    <td>
-                                        <form action="{{route('siswa.destroy',$item->id)}}" method="post">
-                                            @csrf
-                                            {{method_field('delete')}}
-                                            <a href="{{route('siswa.show', $item->id)}}" class="btn btn-info">Detail</a>
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
-</div>
+</div> 
+
+
+<div class="section-wrapper">
+          <label class="section-title">Data Pelanggaran Siswa</label>
+          <p class="mg-b-20 mg-sm-b-40">Data Semua Siswa Yang Melanggar Ditahun 2024-2025.</p>
+
+          <div class="table-wrapper">
+            <table id="datatable1" class="table display responsive nowrap">
+              <thead>
+                  <th>Nama</th>
+                  <th>Tanggal</th>
+                  <th>Deskripsi</th>
+                  <th>Pilihan</th>
+              </thead>
+                            
+              <tbody>
+              @foreach ($data as $item)
+                  <tr>
+                    <td>{{$item->user->name}}</td>
+                    <td>{{$item->tanggal}}</td>
+                    <td>{{$item->deskripsi}}</td>
+                    <td>
+                       <form action="{{route('siswa.destroy',$item->id)}}" method="post">
+                         @csrf
+                         {{method_field('delete')}}
+                         <a href="{{route('siswa.show', $item->id)}}" class="btn btn-info">Detail</a>
+                         <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                   </tr>
+                      @endforeach
+               </tbody>
+            </table>
+          </div><!-- table-wrapper -->
+        </div>
+
 @endsection

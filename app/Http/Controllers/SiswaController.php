@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pelanggaran;
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -14,8 +15,9 @@ class SiswaController extends Controller
     public function index()
     {
         $data = Siswa::all();
+        $user = User::all();
         $pelanggaran = Pelanggaran::all();
-        return view('siswa.index',compact('data', 'pelanggaran'));
+        return view('siswa.index',compact('data', 'pelanggaran', 'user'));
     }
 
     /**
